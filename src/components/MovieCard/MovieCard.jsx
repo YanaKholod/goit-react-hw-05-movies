@@ -2,7 +2,7 @@ import React from 'react';
 import { useLocation } from 'react-router-dom';
 import LoadingPoints from 'components/SharedLayout/LoadingPoints';
 import PropTypes from 'prop-types';
-import { Styled } from 'components/Cast/StyledCast';
+import { Styled } from './StyledMovieCard';
 
 const MovieCard = ({ movie }) => {
   const { title, release_date, poster_path, vote_average, overview, genres } =
@@ -74,8 +74,8 @@ const MovieCard = ({ movie }) => {
 
 MovieCard.propTypes = {
   movie: PropTypes.shape({
-    release_date: PropTypes.string.isRequired,
-    poster_path: PropTypes.string.isRequired,
+    release_date: PropTypes.string,
+    poster_path: PropTypes.string,
     vote_average: PropTypes.number,
     overview: PropTypes.string,
     genres: PropTypes.arrayOf(
