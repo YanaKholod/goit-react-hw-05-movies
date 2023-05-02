@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { toast } from 'react-hot-toast';
-import { Styled } from 'components/MovieList/StyledMovieList';
+import { Styled } from './StyledSearchMovies';
 
 export const SearchMovie = ({ onSubmit }) => {
   const handleSubmit = e => {
@@ -16,9 +16,10 @@ export const SearchMovie = ({ onSubmit }) => {
     onSubmit(query);
     e.target.reset();
   };
+
   return (
     <Styled.Form onSubmit={handleSubmit}>
-      <Styled.Input type="text" placeholder="Search movies" />
+      <Styled.Input name="query" type="text" placeholder="Search movies" />
       <Styled.Button type="submit">Search</Styled.Button>
     </Styled.Form>
   );
